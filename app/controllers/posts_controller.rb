@@ -34,6 +34,26 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @post = Post.find_by(id: params[:id])
+  end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+    if @post.user == current_user
+      if @post.update(post_params)
+        flash[:notice] = '投稿が編集されました'
+        redirect_to root_path
+      else
+        flash[:alert] = '投稿の編集に失敗しました'
+        render :edit
+      end
+    else
+      flash[:alert] = '編集権限がありません'
+      redirect_to root_path
+    end
+  end
+  
   private
 
   def post_params

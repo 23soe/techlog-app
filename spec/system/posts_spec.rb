@@ -63,7 +63,7 @@ end
     before { visit "/posts/#{@post.id}" }
 
     it 'Postの詳細が表示される' do
-        expect(page).to have_content('RSpec学習完了')
+      expect(page).to have_content('RSpec学習完了')
       expect(page).to have_content('System Specを作成した')
       expect(page).to have_content(@user.nickname)
     end
@@ -155,6 +155,51 @@ end
 
       it 'ログ投稿リンクを表示する' do
         expect(page).to have_link('ログ投稿', href: '/posts/new')
+      end
+    end
+  end
+
+  describe 'ログ編集機能の検証' do
+    context '投稿したユーザーでログインしている場合' do
+      before do
+        sign_in @user
+        visit "/posts/#{@post.id}/edit" 
+      end
+  
+      it '編集フォームを表示する' do
+        expect(page).to have_selector('form') 
+        expect(page).to have_field('post_title', with: @post.title) 
+        expect(page).to have_field('post_content', with: @post.content) 
+      end
+  
+      it '編集内容を保存できる' do
+        fill_in 'post_title', with: '編集されたタイトル'
+        fill_in 'post_content', with: '編集された内容'
+        click_button 'ログを編集' 
+
+       
+        expect(current_path).to eq(root_path)
+        expect(page).to have_content('投稿が編集されました') 
+
+        @post.reload
+        expect(@post.title).to eq('編集されたタイトル')
+        expect(@post.content).to eq('編集された内容')
+      end
+    end
+  
+    context '投稿したユーザーでログインしていない場合' do
+      it '編集ページにアクセスできない' do
+        visit "/posts/#{@post.id}/edit"
+        expect(current_path).not_to eq("/posts/#{@post.id}/edit") 
+        expect(current_path).to eq('/users/sign_in') 
+      end
+  
+      it '直接リクエストを投げても編集されない' do
+        patch post_path(@post), params: { post: { title: '不正なタイトル', content: '不正な内容' } }
+  
+        @post.reload
+        expect(@post.title).not_to eq('不正なタイトル')
+        expect(@post.content).not_to eq('不正な内容')
       end
     end
   end
