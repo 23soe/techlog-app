@@ -203,4 +203,17 @@ end
       end
     end
   end
+
+  describe 'PostとHashtagの関係' do
+    let(:hashtag1) { Hashtag.create(tag: '#Ruby') }
+    let(:hashtag2) { Hashtag.create(tag: '#Rails') }
+    let(:post) { Post.create(title: title, content: content, user_id: @user) }
+  
+    it 'PostにHashtagを関連付けることができる' do
+      post.hashtags << hashtag1
+      post.hashtags << hashtag2
+  
+      expect(post.hashtags).to include(hashtag1, hashtag2)
+    end
+  end
 end

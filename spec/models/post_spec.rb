@@ -4,7 +4,7 @@ describe Post do
   before { @user = create(:user) } # 事前にユーザーを作成
 
   let(:title) { 'テストタイトル' }
-  let(:content) { 'テスト本文' }
+  let(:content) { 'テスト#本文' }
   let(:user_id) { @user.id } # 作成したユーザーのIDを外部キーに設定
 
   describe 'バリデーションの検証' do
@@ -64,8 +64,35 @@ describe Post do
 
     it 'Postの属性値を返す' do
       expect(subject.title).to eq('テストタイトル')
-      expect(subject.content).to eq('テスト本文')
+      expect(subject.content).to eq('テスト#本文')
       expect(subject.user_id).to eq(@user.id)
+    end
+  end
+
+  describe "saving hashtags" do
+
+    context "when there are no hashtags in the content" do
+      it "does not create any hashtags" do
+        expect do
+          Post.create(title: title, content: "I am Jeong Soee", user_id: user_id)
+        end.not_to change { Hashtag.count }
+      end
+    end
+    
+    context "when there are hashtags in the content" do
+      it "creates hashtags" do
+        expect do
+          Post.create(title: title, content: "I am #Jeong #Soee", user_id: user_id)
+        end.to change { Hashtag.count }.by(2)
+      end
+    end
+    context "when there are duplicate hastags in the content" do
+      it "does not create extra hashtags if already in the database table" do
+        Hashtag.create(tag: "#Jeong")
+        expect do
+          Post.create(title: title, content: "I am #Jeong #Soee", user_id: user_id)
+        end.to change { Hashtag.count }.by(1)
+      end
     end
   end
 end
