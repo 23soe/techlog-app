@@ -1,0 +1,179 @@
+[33mcommit a0c548f78f7c24ae3f5615cb252f04ad4db11001[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/01[m[33m, [m[1;32mfeature/02[m[33m)[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Tue Jan 21 05:30:50 2025 +0900
+
+    タグモデルを作成
+
+[33mcommit 50f2a9439286408c0f6a4a758a6e6bdae194a874[m[33m ([m[1;31morigin/feature/01[m[33m)[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Mon Jan 20 00:34:11 2025 +0900
+
+    学習ログ編集機能を作成
+
+[33mcommit b362fec95bb4d001e410bb38acd4f95680ae3ff7[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sun Jan 19 15:41:55 2025 +0900
+
+    Home関連機能の削除
+
+[33mcommit 35759b29a50990a904dc48978b8659bac251c8f6[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sun Jan 19 15:26:44 2025 +0900
+
+    学習ログ削除機能を作成
+
+[33mcommit 1c2b41885c5b4355a9c832a92ca9e94e5c23ae6b[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sun Jan 19 14:00:02 2025 +0900
+
+    学習ログ一覧機能を作成
+
+[33mcommit 681bd677965e84190f002c9303755640436e7ab5[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sun Jan 19 13:50:18 2025 +0900
+
+    学習ログ詳細機能を作成
+
+[33mcommit 112265bae8c21c80e7e235a1df9e8c23a7d70299[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sun Jan 19 13:28:45 2025 +0900
+
+    学習ログ投稿機能を作成
+
+[33mcommit 1ca0c8fc27333a15afc1dff999d9f583b6bcadf6[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sun Jan 19 11:06:04 2025 +0900
+
+    Postモデルを作成
+
+[33mcommit 0db46a15d63622e8bb71a3c847964a1c5ddbb5ae[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sun Jan 19 00:39:15 2025 +0900
+
+    devise関連のメッセージを日本語化
+
+[33mcommit e891c7bc9eec9720d07493d81f0eb64ffdaaf86b[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 23:21:08 2025 +0900
+
+    バリデーションエラーメッセージのデザイン調整
+
+[33mcommit 828605a524b05654ebccf5fc0dc1ed92e0c98525[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 23:19:11 2025 +0900
+
+    ナビゲーションバーを追加
+
+[33mcommit 34bd7d490c66fa9afe28b2b582b27af401b90863[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 22:51:25 2025 +0900
+
+    フラッシュメッセージを表示できるように変更
+
+[33mcommit e8ca255b7bd81bc3001b35ff7fc9955c51d9e2b2[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 22:41:55 2025 +0900
+
+    ログイン画面の修正
+
+[33mcommit 58a720c575d3d1effcdef7351f62e6a230bf46bf[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 22:27:41 2025 +0900
+
+    ユーザー登録画面の修正
+
+[33mcommit c3e500289775c71b004fa919f0ad4afaa58309ba[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 21:06:25 2025 +0900
+
+    Tailwind CSSクラスを適用
+
+[33mcommit 66fed59dc6657e2e356dbf8dcebd17b244ccdee4[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 21:01:34 2025 +0900
+
+    deviseのviewファイル(編集用)を生成
+
+[33mcommit bbe9ff363a0acfe1a42196b5b0724d125c83b864[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 20:28:27 2025 +0900
+
+    User.nicknameのバリデーションを追加
+
+[33mcommit a4730e8c8c9ae8783409fc2af3099977cf9a180b[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 20:18:20 2025 +0900
+
+    User.nickname の文字数に関するバリデーションを追加
+
+[33mcommit 4d558c4bff4f9ddf69aba6b3a5dbff453d50d338[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 19:40:02 2025 +0900
+
+    deviseインストールと初期設定完了
+
+[33mcommit e298dc0e3cfc39ed3550d43e72c03948aecf5dfa[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 02:41:51 2025 +0900
+
+    HomeのSystem SpecをHeadlessモードで実行するように変更
+
+[33mcommit 380b5402ba9bc1ef5c96853aedc6344cfe367081[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 02:38:40 2025 +0900
+
+    トップページの統合テストを追加
+
+[33mcommit 8f79222b0c5f0ff01a03db91fefb718d9cd39a78[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 02:27:27 2025 +0900
+
+    Home#top のテストをリファクタ
+
+[33mcommit b510fc856ad043ba0a97fe80ca18ab0748ee6a60[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 02:16:58 2025 +0900
+
+    Rubocop による指摘事項修正(Lint)
+
+[33mcommit 772108677b679e531ad3894b223bb5f982453c76[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 02:14:29 2025 +0900
+
+    Homeコントローラとtopアクションを作成
+
+[33mcommit 82067b59150f4de4fd2be52652f44a3461810632[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 02:05:33 2025 +0900
+
+    Rubocop による指摘事項修正(Lint)
+
+[33mcommit b06f9648ac037044b4079864f61c06f9681b4d4e[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 02:00:19 2025 +0900
+
+    RSpecの初期設定を完了
+
+[33mcommit 496e0f669414d96655bd49739b7e06d1f732490c[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 01:39:57 2025 +0900
+
+    アセットファイル等はrails generate時に自動生成されないように設定
+
+[33mcommit b8aa0af60931acb8a792755daf5f3eee159ad743[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 01:36:48 2025 +0900
+
+    Rubocop による指摘事項修正(Lint)
+
+[33mcommit e2dbe3ca2a4f458afdf7aea46ee876dd0c82f1a5[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 01:30:37 2025 +0900
+
+    Rubocopの初期設定を完了
+
+[33mcommit 399638240e75c8be166a2038c23ec2e5fa7ac5b3[m
+Author: JEONG SOEE <jj.soxee@gmail.com>
+Date:   Sat Jan 18 01:26:42 2025 +0900
+
+    プロジェクト開始
