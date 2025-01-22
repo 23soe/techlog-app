@@ -10,8 +10,12 @@
           </div>
           <% if user_signed_in? %>
             <% if @post.user_id == current_user.id %>
-              <%= button_to "編集", edit_post_path(@post), method: :get, class: "text-sm bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded" %>
+            <div class="flex justify-end">
+              <div class="px-2">
+                <%= button_to "編集", edit_post_path(@post), method: :get, class: "text-sm bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded" %>
+              </div>
               <%= button_to "削除", post_path(@post), method: :delete, class: "text-sm bg-transparent hover:bg-red-500 text-red-700 hover:text-white py-1 px-3 border border-red-500 hover:border-transparent rounded" %>
+            </div>
             <% end %>
           <% end %>
         </div>
