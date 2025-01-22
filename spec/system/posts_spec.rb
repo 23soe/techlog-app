@@ -4,19 +4,22 @@ describe 'Post', type: :system do
   before do
     driven_by :selenium_chrome_headless # ヘッドレスモードで実行
     @user = create(:user) # ログイン用ユーザー作成
-    @post = create(:post, title: 'RSpec学習完了', content: 'System Specを作成した', user_id: @user.id)
-    @post2 = create(:post, title: 'RSpec学習完了 2', content: 'System Specを作成した 2', user_id: @user.id)
+    @category = create(:category) # カテゴリを作成
+    @post = create(:post, title: 'RSpec学習完了', content: 'System Specを作成した', user_id: @user.id,  category: @category)
+    @post2 = create(:post, title: 'RSpec学習完了 2', content: 'System Specを作成した 2', user_id: @user.id, category: @category)
 end
 
   # 投稿フォーム
   let(:title) { 'テストタイトル' }
   let(:content) { 'テスト本文' }
+  let!(:category) { create(:category, name: 'テストカテゴリ') }
 
   describe 'ログ投稿機能の検証' do
     # ログ投稿を行う一連の操作を subject にまとめる
     subject do
       fill_in 'post_title', with: title
       fill_in 'post_content', with: content
+      select 'テストカテゴリ', from: 'post_category_id'
       click_button 'ログを記録'
     end
 
@@ -63,7 +66,7 @@ end
     before { visit "/posts/#{@post.id}" }
 
     it 'Postの詳細が表示される' do
-        expect(page).to have_content('RSpec学習完了')
+      expect(page).to have_content('RSpec学習完了')
       expect(page).to have_content('System Specを作成した')
       expect(page).to have_content(@user.nickname)
     end

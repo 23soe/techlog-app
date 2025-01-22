@@ -54,6 +54,7 @@ gem 'devise' #devise は本番環境でも使用するため
 gem 'foreman'
 
 gem 'concurrent-ruby', '1.3.4'
+gem 'shoulda-matchers', '~> 5.0'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

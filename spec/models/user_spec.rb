@@ -8,7 +8,8 @@ describe User do
   describe '.first' do
     before do
       @user = create(:user, nickname: nickname, email: email) 
-      @post = create(:post, title: 'タイトル', content: '本文', user_id: @user.id)
+      @category = create(:category, name: 'テストカテゴリ')
+      @post = create(:post, title: 'タイトル', content: '本文', user_id: @user.id, category: @category)
     end
 
     subject { described_class.first }

@@ -28,18 +28,25 @@ ja:
               too_long: "は%{count}文字以下に設定して下さい。"
             user:
               required: "が入力されていません。"
+            category:
+              required: "カテゴリーが必要です。"
+            category_id:
+              blank: "カテゴリーを選択してください。"
     attributes:
       user:
         nickname: "ニックネーム"
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
+      post:
+        category: "カテゴリー"
     models:
       user: "ユーザー"
   errors:
     messages:
       not_saved: "エラーが発生したため%{resource}は保存されませんでした。"
-
+      record_invalid: "レコードが無効です。" #ActiveRecord::RecordInvalid:Translation missing: ja.activerecord.errors.messages.record_invalid
+      required: "が必要です。"
   devise:
     failure:
       invalid: "%{authentication_keys}またはパスワードが違います。"

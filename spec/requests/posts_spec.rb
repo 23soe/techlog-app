@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe "Posts", type: :request do
   before do
     @user = create(:user) # 各テストで使用できるユーザーを作成
-    @post = create(:post) # 閲覧用の Post を作成
+    @category = create(:category)
+    @post = create(:post, user: @user, category: @category)
   end
 
   describe "GET /posts/new" do
