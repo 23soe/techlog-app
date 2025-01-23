@@ -1,3 +1,8 @@
+```
+rails -v
+Rails 7.0.8.7
+```
+
 ## アプリの入手方法
 
 ```bash
@@ -33,20 +38,8 @@ bundle install
 ### データベースの作成
 
 ```
-bin/rails db:create
-bin/rails db:migrate
-bin/rails db:migrate RAILS_ENV=test
+bin/rails db:schema:load
 ```
-
-## 起動方法
-
-通常の Rails は `bin/rails s` で起動しますが、このアプリケーションは Tailwind CSS のコンパイルも行うため、`bin/dev` を使って起動します。
-
-```
-bin/dev
-```
-
-その後、ブラウザで http://localhost:3000/ にアクセスする。
 
 ## テスト実行方法
 
@@ -58,4 +51,12 @@ bin/rspec
 
 ```
 bundle exec rubocop
+```
+
+## Category データベースの作成
+```
+Category.create(name: 'テストカテゴリ1')
+Category.create(name: 'テストカテゴリ2')
+Category.create(name: 'テストカテゴリ3'
+
 ```
