@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const app = Vue.createApp({
       data() {
         return {
-          categories: [], // 카테고리 데이터를 저장
+          categories: [], 
         };
       },
       methods: {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
       },
       mounted() {
-        this.fetchCategories(); // 컴포넌트가 로드될 때 카테고리 데이터를 가져옵니다.
+        this.fetchCategories(); 
       },
     });
     app.mount('#category-app');

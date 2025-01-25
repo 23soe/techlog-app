@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   
   resources :posts, only: [:new, :create, :show, :destroy, :edit, :update]
   resources :categories, only: [:index, :show]
+  resources :tags, only: [] do
+    collection do
+      get :posts_by_tag
+    end
+  end
 end
