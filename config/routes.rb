@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root 'posts#index'
   
   resources :posts, only: [:new, :create, :show, :destroy, :edit, :update]
-  resources :categories, only: [:show]
+  resources :categories, only: [:index, :show]
 end
