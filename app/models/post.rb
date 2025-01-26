@@ -11,14 +11,14 @@ class Post < ApplicationRecord
     # ハッシュタグをリンクとして変換
     def content_with_links
         content.gsub(/([＃#][\p{Word}]+)/u) do |match|
-        normalized_tag_name = match.gsub('＃', '#')
+        normalized_tag_name = match.gsub('＃', '#') 
         tag_name = normalized_tag_name.delete('#') # ハッシュタグ名を取得
         "<a href='/tags/#{tag_name}' class='highlight-tag'>#{match}</a>"
         end.html_safe
     end
 
     # 保存前にタグを解析して保存
-    before_save :parse_and_save_tags
+    before_save :parse_and_save_tags, :normalize_content
 
     private
 
@@ -30,19 +30,6 @@ class Post < ApplicationRecord
         # puts "Extracted matches: #{matches.inspect}"
         return if matches.empty?
         
-    #     matches.flatten.each do |tag_name|
-    #         puts "Original tag_name: #{tag_name.inspect}"
-    #         normalized_tag_name = tag_name.unicode_normalize(:nfkc).gsub('＃', '#')
-    #         puts "Normalized tag name: #{normalized_tag_name}" # デバッグ用
-
-    #         tag = Tag.find_or_create_by(name: normalized_tag_name)
-    #         puts "Found or created tag: #{tag.inspect}"
-
-    #         tags << tag unless tags.include?(tag)
-    #         puts "Created or found tag: #{tags.map(&:name)}" # デバッグ用
-    #     end
-    #     puts "Post hashtags after save: #{self.tags.map(&:name)}" # 修正: `tags.map(&:name)` を使用
-    # end
         matches.flatten.each do |tag_name|
             # puts "Processing tag # #{tag_name.inspect}" # デバッグ用
             normalized_tag_name = tag_name.unicode_normalize(:nfkc).gsub('＃', '#')
@@ -65,4 +52,8 @@ class Post < ApplicationRecord
         
         # puts "Final tags for this post: #{self.tags.map(&:name)}" # デバッグ用
     end
+
+    def normalize_content
+        self.content = content.gsub('＃', '#') if content.present?
+      end
 end

@@ -1,12 +1,9 @@
 class TagsController < ApplicationController
-    def posts_by_tag
-      @tag = Tag.find_by(name: params[:tag])
-      if @tag
-        @posts = @tag.posts.includes(:category, :tags).order(created_at: :desc)
-        render json: @posts.as_json(include: { tags: { only: :name }, category: { only: :name } })
-      else
-        render json: [], status: :ok
-      end
+    def show
+      tag = "##{params[:id]}"
+      normalized_tag = tag.gsub('＃', '#')
+      @tag_name = normalized_tag
+      @posts = Post.where("content LIKE ?", "%#{@tag_name}%")
     end
 
     def posts_by_tag_or_category

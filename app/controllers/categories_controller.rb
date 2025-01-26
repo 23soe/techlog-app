@@ -7,6 +7,5 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @posts = @category.posts
-    # render json: { category: @category, posts: posts }
   end
 end
