@@ -61,6 +61,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails' # 追加
   gem 'rspec-rails' # 追加
+  gem 'pg', '~> 1.2'
 end
 
 group :development do
@@ -87,3 +88,5 @@ group :test do
 end
 
 gem 'rack-cors'
+
+gem 'pg', '~> 1.2'
