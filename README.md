@@ -1,8 +1,3 @@
-```
-rails -v
-Rails 7.0.8.7
-```
-
 ## アプリの入手方法
 
 ```bash
@@ -31,7 +26,6 @@ gem install bundler -v 2.6.3
 ### Gem のインストール
 
 ```
-bundle config set path '.bundle'
 bundle install
 ```
 
@@ -44,7 +38,7 @@ bin/rails db:schema:load
 ## テスト実行方法
 
 ```
-bin/rspec
+bundle exec rspec
 ```
 
 ## Rubocop による静的解析
