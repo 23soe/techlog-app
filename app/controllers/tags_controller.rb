@@ -5,7 +5,7 @@ class TagsController < ApplicationController
         @posts = @tag.posts.includes(:category, :tags).order(created_at: :desc)
         render json: @posts.as_json(include: { tags: { only: :name }, category: { only: :name } })
       else
-        render json: { error: 'Tag not found' }, status: 404
+        render json: [], status: :ok
       end
     end
   end

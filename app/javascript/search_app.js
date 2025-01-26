@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       methods: {
         fetchPostsByTag() {
-          if (!this.searchQuery) {
+          if (!this.searchQuery.trim()) {
             // 検索ワードがない場合は空配列に設定
+            this.errorMessage = "入力してください";
             this.filteredPosts = [];
             return;
           }
@@ -19,16 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .get(`/tags/posts_by_tag?tag=${encodeURIComponent(this.searchQuery)}`)
             .then((response) => {
               this.filteredPosts = response.data; // 検索結果を設定
-              this.errorMessage = '';
+              this.errorMessage = response.data.length ? '' : 'データがありません。';
             })
             .catch((error) => {
-                if (error.response && error.response.status === 404) {
-                  this.filteredPosts = []; 
-                  this.errorMessage = 'データがありません。'; 
-                } else {
-                  console.error('Error fetching posts by tag:', error);
-                  this.errorMessage = 'エラーが発生しました。'; 
-                }
+                console.error('Error fetching posts by tag', error);
+                this.errorMessage = 'エラーが発生しました。';
             });
         },
       },
