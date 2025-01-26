@@ -7,6 +7,14 @@ cd techlog-app
 
 ## インストール方法
 
+## Ruby インストール（必要に応じ）
+```bash
+brew install rbenv ruby-build
+rbenv install 3.1.6
+rbenv global 3.1.6
+rbenv rehash
+```
+
 ### Bundler インストール（必要に応じ）
 
 ```bash
