@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :tags, only: [] do
     collection do
-      get :posts_by_tag
+      get :posts_by_tag_or_category
     end
   end
 end
