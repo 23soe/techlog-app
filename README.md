@@ -44,11 +44,3 @@ bundle exec rspec
 ```
 bundle exec rubocop
 ```
-
-## Category データベースの作成
-```
-Category.create(name: 'テストカテゴリ1')
-Category.create(name: 'テストカテゴリ2')
-Category.create(name: 'テストカテゴリ3'
-
-```
