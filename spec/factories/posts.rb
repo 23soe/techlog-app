@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :post do
-    title { 'タイトル1' }
-    content { '本文1' }
+    title { 'テストタイトル' }
+    content { 'テスト内容' }
 
     association :user, factory: :user
     association :category 

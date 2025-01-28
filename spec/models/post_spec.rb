@@ -111,8 +111,5 @@ describe Post do
     expect do
       Post.create( title: title, content: 'This is a test with #Jeong and ＃Soee', user_id: user_id, category: category )
     end.to change { Tag.count }.by(1)
-
-    # tags = Tag.pluck(:name)
-    # expect(tags).to include('#Jeong', '#Soee')
   end
 end
