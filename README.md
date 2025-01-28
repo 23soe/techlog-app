@@ -1,3 +1,7 @@
+# Blog
+URL : [https://techlog-app-ihjf.onrender.com](https://techlog-app-ihjf.onrender.com)
+
+# プロジェクトのセットアップ手順
 ## アプリの入手方法
 
 ```bash
@@ -30,7 +34,13 @@ bundle install
 ### データベースの作成
 
 ```
-bin/rails db:schema:load
+bin/rails db:create
+bin/rails db:migrate
+bin/rails db:migrate RAILS_ENV=test
+```
+## 起動方法
+```
+bin/rails s
 ```
 
 ## テスト実行方法
@@ -44,3 +54,11 @@ bundle exec rspec
 ```
 bundle exec rubocop
 ```
+
+# 機能の説明
+
+- ブログ記事の管理(CRUD) 
+- 検索・フィルタリング機能(カテゴリやタグ)
+- ユーザー認証機能(Railsでログイン/ログアウト)
+- レスポンシブデザイン(tailwindcss)
+
