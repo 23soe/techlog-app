@@ -3,7 +3,8 @@ class Post < ApplicationRecord
     belongs_to :category
 
     has_and_belongs_to_many :tags, join_table: :posts_tags
-  
+    has_many :comments, dependent: :destroy
+    
     validates :title, presence: true, length: { maximum: 100 }
     validates :content, presence: true, length: { maximum: 100 }
     validates :category_id, presence: true

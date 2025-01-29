@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'posts#index'
   
-  resources :posts, only: [:new, :create, :show, :destroy, :edit, :update]
+  resources :posts, only: [:new, :create, :show, :destroy, :edit, :update] do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :categories, only: [:index, :show]
   resources :tags, only: [:show] do
     collection do
