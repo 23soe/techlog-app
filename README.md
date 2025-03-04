@@ -1,5 +1,5 @@
 # Blog
-URL : [https://techlog-app-ihjf.onrender.com](https://techlog-app-ihjf.onrender.com)
+URL : [https://techlog-app-ihjf.onrender.com](https://techlog-app-ihjf.onrender.com) (X)
 
 # プロジェクトのセットアップ手順
 ## アプリの入手方法
